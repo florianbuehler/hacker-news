@@ -8,7 +8,7 @@ const getInitialState = () => ({
   error: ''
 })
 
-const story = (state = getInitialState(), { type, payload}) => {
+const story = (state = getInitialState(), { type, payload }) => {
   switch (type) {
     case actionTypes.FETCH_STORY_IDS_REQUEST:
     case actionTypes.FETCH_STORIES_REQUEST:
@@ -28,7 +28,7 @@ const story = (state = getInitialState(), { type, payload}) => {
         page: state.page + 1,
         isFetching: false
       }
-    default: 
+    default:
       return state
   }
 }

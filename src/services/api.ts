@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios, { AxiosBasicCredentials, AxiosInstance } from 'axios'
 
 // Default API will be your root
 const API_ROOT = process.env.URL || 'http://localhost:3000/'
@@ -9,8 +9,14 @@ const HEADERS = {
 }
 
 class ApiService {
-  // @ts-ignore
-  constructor({ baseURL = API_ROOT, timeout = TIMEOUT, headers = HEADERS, auth }) {
+  private client: AxiosInstance
+
+  constructor(
+    baseURL: string = API_ROOT,
+    timeout: number = TIMEOUT,
+    headers: { Accept: string; 'Content-Type': string } = HEADERS,
+    auth?: AxiosBasicCredentials | undefined
+  ) {
     const client = axios.create({
       baseURL,
       timeout,
@@ -19,46 +25,60 @@ class ApiService {
     })
 
     client.interceptors.response.use(this.handleSuccess, this.handleError)
-    // @ts-ignore
     this.client = client
   }
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   handleSuccess(response) {
     return response
   }
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   handleError(error) {
     return Promise.reject(error)
   }
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  get(path) {
-    // @ts-ignore
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  get(path: string) {
     return this.client.get(path).then((response) => response.data)
   }
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  post(path, payload) {
-    // @ts-ignore
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  post(path: string, payload) {
     return this.client.post(path, payload).then((response) => response.data)
   }
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  put(path, payload) {
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  put(path: string, payload) {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     return this.client.put(path, payload).then((response) => response.data)
   }
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  patch(path, payload) {
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  patch(path: string, payload) {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     return this.client.patch(path, payload).then((response) => response.data)
   }
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  delete(path) {
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  delete(path: string) {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     return this.client.delete(path).then((response) => response.data)
   }
