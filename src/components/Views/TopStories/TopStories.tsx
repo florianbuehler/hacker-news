@@ -21,7 +21,7 @@ const TopStories: React.FC<Props> = (props) => {
     if (!isFetching) {
       fetchStories(storyIds, page)
     }
-  } 
+  }
 
   const { stories, hasMoreStories } = props
 
