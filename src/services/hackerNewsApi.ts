@@ -12,7 +12,11 @@ const getPageSlice = (limit: number, page = 0) => ({begin: page * limit, end: (p
 const getPageValues = (begin: number, end: number, items: number[]) => items.slice(begin, end) 
 
 const hackerNewsApi = {
+  getBestStoryIds: () => client.get(`/beststories${JSON_QUERY}`),
+  
   getTopStoryIds: () => client.get(`/topstories${JSON_QUERY}`),
+  
+  getNewStoryIds: () => client.get(`newstories${JSON_QUERY}`),
   
   getStoryById: (id: number) => client.get(`/item/${id}${JSON_QUERY}`),
   
