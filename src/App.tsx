@@ -1,4 +1,7 @@
 import React from 'react';
+import hackerNewsApi from './services/hackerNewsApi'
+
+hackerNewsApi.getTopStoryIds().then((ids: number[]) => console.log(ids))
 
 function App() {
   return (
