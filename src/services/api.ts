@@ -1,4 +1,4 @@
-﻿import axios from 'axios';
+import axios from 'axios';
 
 // Default API will be your root
 const API_ROOT = process.env.URL || 'http://localhost:3000/';
