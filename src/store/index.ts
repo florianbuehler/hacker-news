@@ -3,10 +3,10 @@ import reducer from './reducer'
 import middleware from './middleware'
 
 // @ts-ignore
-const configureStore = initialState => {
+const configureStore = (initialState) => {
   const store = createStore(reducer, initialState, middleware)
 
   return store
 }
 
-export default configureStore;
+export default configureStore
