@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import hackerNewsApi from './services/hackerNewsApi'
-
-hackerNewsApi.getTopStoryIds().then((ids: number[]) => console.log(ids))
+import InfiniteScroll from 'react-infinite-scroll-component'
 
 class App extends Component {
   componentDidMount() {
@@ -9,17 +7,27 @@ class App extends Component {
     this.props.fetchStoriesFirstPage()
   }
 
+  fetchStories = () => {
+    // @ts-ignore
+    const { storyIds, page, fetchStories, isFetching} = this.props
+    if (!isFetching) {
+      fetchStories({storyIds, page })
+    }
+  }
+  
   render() {
     // @ts-ignore
-    const { stories } = this.props
+    const { stories, hasMoreStories } = this.props
     
     // @ts-ignore
     return (
       <div>
         <h1>Hacker News</h1>
-        <ul>
-          {stories.map((story: any) => <h2>hello</h2>)}
-        </ul>
+        <InfiniteScroll next={this.fetchStories} hasMore={hasMoreStories} loader={<h3>loading...</h3>} dataLength={stories.length}>
+          <ul>
+            {stories.map((story: any) => <h2>hello</h2>)}
+          </ul>
+        </InfiniteScroll>
       </div>
     );
   }
