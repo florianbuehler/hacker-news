@@ -1,3 +1,9 @@
+/* Inject preflight here for a clean cross browser CSS reset  */
+/* see https://tailwindcss.com/docs/preflight */
 @tailwind base;
+
+/* Inject Tailwind's component classes and custom component classes registered by plugins */
 @tailwind components;
+
+/* Inject Tailwind's utility classes and custom utility classes registered by plugins */
 @tailwind utilities;
