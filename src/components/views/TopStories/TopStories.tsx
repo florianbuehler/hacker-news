@@ -27,7 +27,6 @@ const TopStories: React.FC<Props> = (props) => {
 
   return (
     <div>
-      <h1>Hacker News</h1>
       <InfiniteScroll
         next={fetchStories}
         hasMore={hasMoreStories}

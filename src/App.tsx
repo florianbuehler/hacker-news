@@ -6,10 +6,10 @@ import TopStories from 'components/views/TopStories'
 
 const App: React.FC = () => {
   return (
-    <PageLayout>
-      <Router>
-        {/* A <Switch> looks through its children <Route>s and
+    <Router>
+      {/* A <Switch> looks through its children <Route>s and
           renders the first one that matches the current URL. */}
+      <PageLayout>
         <Switch>
           <Route exact path={routes.home}>
             <Redirect to={routes.stories.best} />
@@ -27,8 +27,8 @@ const App: React.FC = () => {
             <h1>No match</h1>
           </Route>
         </Switch>
-      </Router>
-    </PageLayout>
+      </PageLayout>
+    </Router>
   )
 }
 
