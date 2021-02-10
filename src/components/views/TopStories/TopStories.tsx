@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component'
+import { Story } from 'store/story/story'
+import StoryCard from 'components/atoms/StoryCard'
 
 type Props = {
   storyIds: number[]
@@ -35,10 +37,9 @@ const TopStories: React.FC<Props> = (props) => {
       >
         <ul>
           {stories.map(
-            (story: never): React.ReactElement => (
-              // eslint-disable-next-line react/jsx-key
-              <li>
-                <h2>hello</h2>
+            (story: Story): React.ReactElement => (
+              <li id={story.id.toString()} className="mb-4">
+                <StoryCard {...story} />
               </li>
             )
           )}

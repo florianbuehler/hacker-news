@@ -4,14 +4,12 @@ import Header from 'components/molecules/Header'
 import NavBar from 'components/molecules/Navbar'
 
 const PageLayout: React.FC = ({ children }): React.ReactElement => {
-  const [isDarkMode, toggleDarkMode] = useState(false)
-
-  //const darkMode = false
+  const [isDarkMode, setIsDarkMode] = useState(false)
 
   return (
     <div className={classnames(isDarkMode ? 'dark' : '', 'flex flex-col min-h-screen')}>
       <Header />
-      <NavBar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+      <NavBar isDarkMode={isDarkMode} toggleDarkMode={setIsDarkMode} />
       <main className="bg-grey-50 flex-1 transition-colors dark:bg-grey-900">
         <div className="max-w-5xl mx-auto">{children}</div>
       </main>
