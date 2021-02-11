@@ -35,7 +35,7 @@ const TopStories: React.FC<Props> = (props) => {
         loader={<h3>loading...</h3>}
         dataLength={stories.length}
       >
-        <ul>
+        <ul className="py-8">
           {stories.map(
             (story: Story): React.ReactElement => (
               <li id={story.id.toString()} className="mb-4">
