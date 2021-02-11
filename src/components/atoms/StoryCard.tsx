@@ -1,5 +1,6 @@
 import React from 'react'
 import { Story } from 'store/story/story'
+import getSiteHosteName from 'utils/getSiteHosteName'
 
 const getTimePassed = (time: number): string => {
   const hoursPassed = new Date().getHours() - new Date(time * 1000).getHours()
@@ -15,17 +16,20 @@ const getTimePassed = (time: number): string => {
 }
 
 const StoryCard: React.FC<Story> = ({ title, url, score, by, time, ...props }): React.ReactElement => {
+  const hosteName = getSiteHosteName(url)
   const timePassed = getTimePassed(time)
 
   return (
-    <article className="flex flex-row p-4 border rounded-xl shadow border-grey-400 bg-grey-100">
+    <article className="flex flex-row p-4 border rounded-xl shadow border-grey-300 bg-grey-50">
       <div className="flex items-center w-8 justify-center">{score}</div>
-      <div className="pl-4">
-        <h3 className="text-xl">{title}</h3>
-        <p>
-          (<a href={url}>{url})</a>
-        </p>
-        <p>
+      <div className="pl-5">
+        <h3 className="text-xl">
+          <a href={url} target="_blank">
+            {title}
+          </a>
+        </h3>
+        <p className="text-sm">(on {hosteName})</p>
+        <p className="pt-3 text-sm">
           by {by} {timePassed} ago
         </p>
       </div>
