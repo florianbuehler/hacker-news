@@ -4,8 +4,11 @@ export default {
   home: '/',
 
   stories: include('/stories', {
-    best: '/best',
-    new: '/new',
-    top: '/top'
+    best: 'best',
+    new: 'new',
+    top: 'top',
+    details: include(':storyId', {
+      show: ''
+    })
   })
 }
