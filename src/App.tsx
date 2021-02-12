@@ -1,8 +1,11 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
-import routes from './routes'
+import routes from 'routes'
 import PageLayout from 'components/layouts/PageLayout'
+
+// Views
 import TopStories from 'components/views/TopStories'
+import Story from 'components/views/Story'
 
 const App: React.FC = () => {
   return (
@@ -22,6 +25,9 @@ const App: React.FC = () => {
           </Route>
           <Route exact path={routes.stories.new}>
             <TopStories />
+          </Route>
+          <Route exact path={routes.stories.details.show}>
+            <Story />
           </Route>
           <Route path="*">
             <h1>No match</h1>

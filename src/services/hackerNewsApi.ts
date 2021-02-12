@@ -1,27 +1,32 @@
 import ApiService from './api'
 
-const BASE_URL = 'https://hacker-news.firebaseio.com/v0'
+const FIREBASE_BASE_URL = 'https://hacker-news.firebaseio.com/v0'
 const JSON_QUERY = '.json?print=pretty'
+const ALGOLIA_BASE_URL = 'http://hn.algolia.com/api/v1'
 
 const PAGE_LIMIT = 20
 
-const client = new ApiService(BASE_URL)
+const firebaseClient = new ApiService(FIREBASE_BASE_URL)
+const algoliaClient = new ApiService(ALGOLIA_BASE_URL)
 
 const getPageSlice = (limit: number, page = 0) => ({ begin: page * limit, end: (page + 1) * limit })
 const getPageValues = (begin: number, end: number, items: number[]) => items.slice(begin, end)
 
 const hackerNewsApi = {
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-  getBestStoryIds: () => client.get(`/beststories${JSON_QUERY}`),
+  getBestStoryIds: () => firebaseClient.get(`/beststories${JSON_QUERY}`),
 
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-  getTopStoryIds: () => client.get(`/topstories${JSON_QUERY}`),
+  getTopStoryIds: () => firebaseClient.get(`/topstories${JSON_QUERY}`),
 
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-  getNewStoryIds: () => client.get(`newstories${JSON_QUERY}`),
+  getNewStoryIds: () => firebaseClient.get(`newstories${JSON_QUERY}`),
 
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-  getStoryById: (id: number) => client.get(`/item/${id}${JSON_QUERY}`),
+  getStoryById: (id: number) => firebaseClient.get(`/item/${id}${JSON_QUERY}`),
+
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  getStoryDetailsById: (id: number) => algoliaClient.get(`/items/${id}`),
 
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   getStoriesByPage: (ids: number[], page: number) => {

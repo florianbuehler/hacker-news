@@ -31,6 +31,7 @@
     "autoprefixer": "^9.8.6",
     "axios": "^0.21.1",
     "classnames": "^2.2.6",
+    "lodash": "^4.17.20",
     "named-urls": "^2.0.0",
     "postcss": "^7.0.35",
     "react": "^17.0.1",
@@ -47,6 +48,7 @@
   },
   "devDependencies": {
     "@types/classnames": "^2.2.11",
+    "@types/lodash": "^4.14.168",
     "@types/node": "^12.19.16",
     "@types/react": "^17.0.1",
     "@types/react-dom": "^17.0.0",
