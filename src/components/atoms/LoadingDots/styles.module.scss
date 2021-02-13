@@ -1,25 +1,36 @@
+@import 'src/styles/variables';
+
 .firstDot {
-  animation: dotFlashing 1s infinite alternate;
+  animation-name: dotFlashing;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
   animation-delay: 0s;
 }
 
 .secondDot {
-  animation: dotFlashing 1s infinite alternate;
+  animation-name: dotFlashing;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
   animation-delay: 0.5s;
 }
 
 .thirdDot {
-  animation: dotFlashing 1s infinite alternate;
+  animation-name: dotFlashing;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
   animation-delay: 1s;
 }
 
 @keyframes dotFlashing {
   0% {
-    background-color: rgb(163, 163, 163);
+    background-color: $grey-200;
+  }
+  25% {
+    background-color: $grey-500;
   }
   50%,
   100% {
-    background-color: rgb(82, 82, 82);
+    background-color: $grey-200;
   }
 }
 

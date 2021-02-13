@@ -5,7 +5,7 @@ import classnames from 'classnames'
 import classes from './styles.module.scss'
 
 const LoadingDots: React.FC = (): React.ReactElement => {
-  const basicClasses = 'bg-grey-500 w-3.5 h-3.5 rounded-full'
+  const basicClasses = 'bg-grey-200 w-3.5 h-3.5 rounded-full'
 
   return (
     <div className="flex flex-row w-28 justify-between">
