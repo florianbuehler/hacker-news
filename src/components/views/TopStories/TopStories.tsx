@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { Story } from 'store/story/story'
 import StoryCard from 'components/atoms/StoryCard'
+import LoadingDots from 'components/atoms/LoadingDots'
 
 type Props = {
   storyIds: number[]
@@ -29,12 +30,7 @@ const TopStories: React.FC<Props> = (props) => {
 
   return (
     <div>
-      <InfiniteScroll
-        next={fetchStories}
-        hasMore={hasMoreStories}
-        loader={<h3>loading...</h3>}
-        dataLength={stories.length}
-      >
+      <InfiniteScroll next={fetchStories} hasMore={hasMoreStories} loader={<LoadingDots />} dataLength={stories.length}>
         <ul className="py-8">
           {stories.map(
             (story: Story): React.ReactElement => (
