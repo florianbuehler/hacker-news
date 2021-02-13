@@ -1,0 +1,25 @@
+.firstDot {
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 0s;
+}
+
+.secondDot {
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 0.5s;
+}
+
+.thirdDot {
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 1s;
+}
+
+@keyframes dotFlashing {
+  0% {
+    background-color: rgb(163, 163, 163);
+  }
+  50%,
+  100% {
+    background-color: rgb(82, 82, 82);
+  }
+}
+
