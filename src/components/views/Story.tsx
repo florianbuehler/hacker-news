@@ -11,9 +11,9 @@ const Story: React.FC = (): React.ReactElement => {
   //hackerNewsApi.getStoryDetailsById(storyId).then()
 
   return (
-    <div>
+    <div className="bg-blue-500 flex flex-col w-full">
       <h2>story details</h2>
-      <LoadingDots />
+      <LoadingDots className="mx-auto mt-12 mb-16" />
     </div>
   )
 }

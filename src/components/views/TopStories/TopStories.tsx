@@ -30,7 +30,12 @@ const TopStories: React.FC<Props> = (props) => {
 
   return (
     <div>
-      <InfiniteScroll next={fetchStories} hasMore={hasMoreStories} loader={<LoadingDots />} dataLength={stories.length}>
+      <InfiniteScroll
+        next={fetchStories}
+        hasMore={hasMoreStories}
+        loader={<LoadingDots className="mx-auto mt-4 mb-20" />}
+        dataLength={stories.length}
+      >
         <ul className="py-8">
           {stories.map(
             (story: Story): React.ReactElement => (
