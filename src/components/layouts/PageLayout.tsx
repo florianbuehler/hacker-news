@@ -11,7 +11,7 @@ const PageLayout: React.FC = ({ children }): React.ReactElement => {
       <Header />
       <NavBar isDarkMode={isDarkMode} toggleDarkMode={setIsDarkMode} />
       <main className="bg-grey-50 flex-1 transition-colors dark:bg-grey-900">
-        <div className="max-w-5xl mx-auto">{children}</div>
+        <div className="flex flex-col items-center max-w-5xl mx-auto">{children}</div>
       </main>
     </div>
   )
