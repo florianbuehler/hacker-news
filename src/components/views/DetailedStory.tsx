@@ -3,23 +3,29 @@ import { useParams } from 'react-router-dom'
 import { get } from 'lodash'
 import hackerNewsApi from '../../services/hackerNewsApi'
 import LoadingDots from '../atoms/LoadingDots'
+import { Story } from './types'
 
-const Story: React.FC = (): React.ReactElement => {
+const DetailedStory: React.FC = (): React.ReactElement => {
   const params = useParams()
   const storyId = get(params, 'storyId')
 
-  const [story, setStory] = useState(null)
+  const [story, setStory] = useState<Story | null>(null)
 
   useEffect(() => {
     hackerNewsApi.getStoryDetailsById(storyId).then((res) => setStory(res))
   }, [])
 
+  console.log('The state is:', story)
+
+  if (!story) {
+    return <LoadingDots className="mx-auto mt-12 mb-16" />
+  }
+
   return (
-    <div className="bg-blue-500 flex flex-col w-full">
+    <div className="">
       <h2>story details</h2>
-      <LoadingDots className="mx-auto mt-12 mb-16" />
     </div>
   )
 }
 
-export default Story
+export default DetailedStory

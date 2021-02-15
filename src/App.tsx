@@ -5,7 +5,7 @@ import PageLayout from 'components/layouts/PageLayout'
 
 // Views
 import TopStories from 'components/views/TopStories'
-import Story from 'components/views/Story'
+import DetailedStory from 'components/views/DetailedStory'
 
 const App: React.FC = () => {
   return (
@@ -27,7 +27,7 @@ const App: React.FC = () => {
             <TopStories />
           </Route>
           <Route exact path={routes.stories.details.show}>
-            <Story />
+            <DetailedStory />
           </Route>
           <Route path="*">
             <h1>No match</h1>
