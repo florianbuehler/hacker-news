@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { get } from 'lodash'
 import hackerNewsApi from '../../services/hackerNewsApi'
@@ -8,7 +8,11 @@ const Story: React.FC = (): React.ReactElement => {
   const params = useParams()
   const storyId = get(params, 'storyId')
 
-  //hackerNewsApi.getStoryDetailsById(storyId).then()
+  const [story, setStory] = useState(null)
+
+  useEffect(() => {
+    hackerNewsApi.getStoryDetailsById(storyId).then((res) => setStory(res))
+  }, [])
 
   return (
     <div className="bg-blue-500 flex flex-col w-full">
