@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { get } from 'lodash'
-import hackerNewsApi from '../../services/hackerNewsApi'
-import LoadingDots from '../atoms/LoadingDots'
+import hackerNewsApi from 'services/hackerNewsApi'
+import LoadingDots from 'components/atoms/LoadingDots'
 import { Story } from './types'
 
 const DetailedStory: React.FC = (): React.ReactElement => {
@@ -23,7 +23,7 @@ const DetailedStory: React.FC = (): React.ReactElement => {
 
   return (
     <div className="">
-      <h2>story details</h2>
+      <h2>{story.title}</h2>
     </div>
   )
 }
