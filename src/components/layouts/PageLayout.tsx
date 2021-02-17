@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import classnames from 'classnames'
 import Header from 'components/molecules/Header'
 import NavBar from 'components/molecules/Navbar'
+import Footer from 'components/molecules/Footer'
 
 export type PageLayoutProps = {
   hideFooter: () => void
@@ -29,7 +30,7 @@ const PageLayout: React.FC = ({ children }): React.ReactElement => {
           {React.isValidElement(children) ? React.cloneElement(children, { hideFooter, showFooter }) : children}
         </div>
       </main>
-      {displayFooter && <footer>some footer content</footer>}
+      {displayFooter && <Footer />}
     </div>
   )
 }
