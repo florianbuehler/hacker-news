@@ -20,7 +20,7 @@ const Footer: React.FC = (): React.ReactElement => {
             </a>
           </LinkContainerLayout>
           <LinkContainerLayout>
-            <a href="" className={linkClasses}>
+            <a href="https://github.com/HackerNews/API" className={linkClasses}>
               API
             </a>
           </LinkContainerLayout>
