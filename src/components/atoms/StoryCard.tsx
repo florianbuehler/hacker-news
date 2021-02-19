@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import routes from 'routes'
 import { reverse } from 'named-urls'
 import { Story } from 'store/story/story'
+import { ReactComponent as Arrow } from 'assets/icons/arrow_forward_ios-black-18dp.svg'
 import getSiteHostName from 'utils/getSiteHostName'
 
 const getTimePassed = (time: number): string => {
@@ -34,7 +35,11 @@ const StoryCard: React.FC<Story> = ({ title, url, score, by, time, ...props }): 
           by {by} {timePassed} ago
         </p>
       </div>
-      <Link to={reverse(routes.stories.details.show, { storyId: props.id })}>details</Link>
+      <div className="ml-auto flex justify-center items-center">
+        <Link to={reverse(routes.stories.details.show, { storyId: props.id })}>
+          <Arrow className="text-grey-600 fill-current object-cover h-6 w-auto" />
+        </Link>
+      </div>
     </article>
   )
 }
