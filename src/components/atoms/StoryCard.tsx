@@ -1,11 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import routes from 'routes'
+import { reverse } from 'named-urls'
 import { Story } from 'store/story/story'
-import getSiteHosteName from 'utils/getSiteHosteName'
+import { ReactComponent as Arrow } from 'assets/icons/arrow_forward_ios-black-18dp.svg'
+import getSiteHostName from 'utils/getSiteHostName'
 
 const getTimePassed = (time: number): string => {
   const hoursPassed = new Date().getHours() - new Date(time * 1000).getHours()
-
-  console.log(new Date().toISOString(), new Date(time * 1000).toISOString())
 
   if (hoursPassed > 0) {
     return hoursPassed === 1 ? `${hoursPassed} hour` : `${hoursPassed} hours`
@@ -16,7 +18,7 @@ const getTimePassed = (time: number): string => {
 }
 
 const StoryCard: React.FC<Story> = ({ title, url, score, by, time, ...props }): React.ReactElement => {
-  const hosteName = getSiteHosteName(url)
+  const hostName = getSiteHostName(url)
   const timePassed = getTimePassed(time)
 
   return (
@@ -28,10 +30,15 @@ const StoryCard: React.FC<Story> = ({ title, url, score, by, time, ...props }): 
             {title}
           </a>
         </h3>
-        <p className="text-sm">(on {hosteName})</p>
+        <p className="text-sm">(on {hostName})</p>
         <p className="pt-3 text-sm">
           by {by} {timePassed} ago
         </p>
+      </div>
+      <div className="ml-auto flex justify-center items-center">
+        <Link to={reverse(routes.stories.details.show, { storyId: props.id })}>
+          <Arrow className="text-grey-600 fill-current object-cover h-6 w-auto" />
+        </Link>
       </div>
     </article>
   )
