@@ -26,8 +26,8 @@ const DetailedStory: React.FC = (): React.ReactElement => {
   const date = getDate(story.created_at_i)
 
   return (
-    <article className="flex flex-col items-center mt-14 w-full">
-      <h2 className="text-3xl font-bold transition-colors duration-200 hover:text-teal-500">
+    <article className="flex flex-col items-center mt-14 mb-20 w-full">
+      <h2 className="text-3xl font-bold text-center transition-colors duration-200 hover:text-teal-500">
         <a href={story.url}>{story.title}</a>
       </h2>
       <span className="mt-4 text-lg">
@@ -38,7 +38,7 @@ const DetailedStory: React.FC = (): React.ReactElement => {
         <ul>
           {story.children.map((comment) => {
             return (
-              <li key={comment.id}>
+              <li key={comment.id} className="mb-4">
                 <Comment comment={comment} />
               </li>
             )
