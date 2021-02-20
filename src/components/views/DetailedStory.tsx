@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { get } from 'lodash'
 import hackerNewsApi from 'services/hackerNewsApi'
 import LoadingDots from 'components/atoms/LoadingDots'
-import Comment from 'components/atoms/Comment'
+import Comment from 'components/molecules/Comment'
 import { Story } from './types'
 import { getDate } from 'utils/dateUtils'
 

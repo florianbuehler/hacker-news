@@ -13,10 +13,10 @@ const StoryCard: React.FC<Story> = ({ title, url, score, by, time, ...props }): 
   const timePassed = getTimePassed(time)
 
   return (
-    <article className="flex flex-row p-4 border rounded-xl shadow border-grey-300 bg-grey-50">
+    <article className="flex flex-row p-4 border rounded-xl shadow border-grey-300 bg-grey-50 dark:bg-grey-700 dark:text-grey-100">
       <div className="flex items-center w-8 justify-center">{score}</div>
       <div className="pl-5">
-        <h3 className="text-xl transition-colors duration-200 hover:text-teal-500">
+        <h3 className="text-xl transition-colors duration-200 hover:text-teal-500 dark:hover:text-teal-400">
           <a href={url} target="_blank" rel="noopener noreferrer">
             {title}
           </a>
@@ -34,7 +34,7 @@ const StoryCard: React.FC<Story> = ({ title, url, score, by, time, ...props }): 
       </div>
       <div className="ml-auto flex justify-center items-center">
         <Link to={reverse(routes.stories.details.show, { storyId: props.id })}>
-          <Arrow className="text-grey-600 transition-colors duration-200 fill-current object-cover h-6 w-auto hover:text-teal-500" />
+          <Arrow className="text-grey-600 transition-colors duration-200 fill-current object-cover h-6 w-auto hover:text-teal-500 dark:text-grey-100 dark:hover:text-teal-400" />
         </Link>
       </div>
     </article>
