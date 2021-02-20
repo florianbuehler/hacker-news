@@ -4,18 +4,8 @@ import routes from 'routes'
 import { reverse } from 'named-urls'
 import { Story } from 'store/story/story'
 import { ReactComponent as Arrow } from 'assets/icons/arrow_forward_ios-black-18dp.svg'
+import { getTimePassed } from 'utils/dateUtils'
 import { getHostName, getOrigin } from 'utils/urlUtils'
-
-const getTimePassed = (time: number): string => {
-  const hoursPassed = new Date().getHours() - new Date(time * 1000).getHours()
-
-  if (hoursPassed > 0) {
-    return hoursPassed === 1 ? `${hoursPassed} hour` : `${hoursPassed} hours`
-  } else {
-    const minutesPassed = new Date().getMinutes() - new Date(time * 1000).getMinutes()
-    return minutesPassed === 1 ? `${minutesPassed} minute` : `${minutesPassed} minutes`
-  }
-}
 
 const StoryCard: React.FC<Story> = ({ title, url, score, by, time, ...props }): React.ReactElement => {
   const hostName = getHostName(url)
