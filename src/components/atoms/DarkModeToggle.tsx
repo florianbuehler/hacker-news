@@ -11,7 +11,7 @@ const DarkModeToggle: React.FC<Props> = ({ isDarkMode, toggleDarkMode }): React.
 
   return (
     <div
-      className="w-10 h-6 flex items-center bg-gray-300 rounded-full p-1"
+      className="w-10 h-6 flex items-center bg-gray-300 rounded-full p-1 dark:bg-teal-500"
       onClick={() => toggleDarkMode(!isDarkMode)}
     >
       <div className={toggleClasses} />
