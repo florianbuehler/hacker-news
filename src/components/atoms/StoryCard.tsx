@@ -31,7 +31,7 @@ const StoryCard: React.FC<Story> = ({ title, url, score, by, time, ...props }): 
           </a>
         </h3>
         <p className="text-sm">
-          (on <a href={hostName}>{hostName}</a>)
+          (on <a href={url}>{hostName}</a>)
         </p>
         <p className="pt-3 text-sm">
           by {by} {timePassed} ago

@@ -1,43 +1,30 @@
 import React from 'react'
 import LinkContainerLayout from 'components/layouts/LinkContainerLayout'
+import FooterLink from 'components/atoms/FooterLink'
 
 const Footer: React.FC = (): React.ReactElement => {
-  const linkClasses = 'px-1 py-2 font-semibold duration-150 hover:text-teal-300'
-
   return (
     <footer>
       <section className="flex flex-row justify-between bg-grey-600 text-grey-50 px-32 py-20">
-        <div className="flex justify-between w-1/3">
-          <LinkContainerLayout>
-            <a href="" className={linkClasses}>
-              Guidelines
-            </a>
-            <a href="" className={linkClasses}>
-              FAQ
-            </a>
-            <a href="" className={linkClasses}>
-              Lists
-            </a>
+        <div className="flex justify-between w-2/5">
+          <LinkContainerLayout title="Platform">
+            <FooterLink to="">Guidelines</FooterLink>
+            <FooterLink to="">FAQ</FooterLink>
+            <FooterLink to="">Lists</FooterLink>
           </LinkContainerLayout>
-          <LinkContainerLayout>
-            <a href="https://github.com/HackerNews/API" className={linkClasses}>
-              API
-            </a>
+          <LinkContainerLayout title="Company">
+            <FooterLink to="">Security</FooterLink>
+            <FooterLink to="">Legal</FooterLink>
+            <FooterLink to="">Contact</FooterLink>
           </LinkContainerLayout>
-          <LinkContainerLayout>
-            <a href="" className={linkClasses}>
-              Security
-            </a>
-            <a href="" className={linkClasses}>
-              Legal
-            </a>
-            <a href="" className={linkClasses}>
-              Contact
-            </a>
+          <LinkContainerLayout title="Developer">
+            <FooterLink to="https://github.com/HackerNews/API">API</FooterLink>
           </LinkContainerLayout>
         </div>
-        <div className="font-semibold">
-          <a href="mailto:hn@ycombinator.com" className="duration-150 hover:text-teal-300">
+        <div className="flex flex-col font-semibold">
+          <span>335 Pioneer Way</span>
+          <span>Mountain View, CA 94041</span>
+          <a href="mailto:hn@ycombinator.com" className="mt-6 duration-150 hover:text-teal-300">
             hn@ycombinator.com
           </a>
         </div>
