@@ -30,7 +30,9 @@ const StoryCard: React.FC<Story> = ({ title, url, score, by, time, ...props }): 
             {title}
           </a>
         </h3>
-        <p className="text-sm">(on {hostName})</p>
+        <p className="text-sm">
+          (on <a href={hostName}>{hostName}</a>)
+        </p>
         <p className="pt-3 text-sm">
           by {by} {timePassed} ago
         </p>
