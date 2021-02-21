@@ -5,7 +5,7 @@ import FooterLink from 'components/atoms/FooterLink'
 const Footer: React.FC = (): React.ReactElement => {
   return (
     <footer>
-      <section className="flex flex-row justify-between bg-grey-600 text-grey-50 px-32 py-20">
+      <section className="flex flex-row justify-between bg-grey-700 text-grey-50 px-32 py-20 dark:bg-grey-800">
         <div className="flex justify-between w-2/5">
           <LinkContainerLayout title="Platform">
             <FooterLink to="">Guidelines</FooterLink>
@@ -29,7 +29,9 @@ const Footer: React.FC = (): React.ReactElement => {
           </a>
         </div>
       </section>
-      <section className="flex justify-center py-2 bg-grey-50">&copy; 2021 Florian Bühler</section>
+      <section className="flex justify-center py-3 bg-grey-500 text-grey-100 dark:bg-grey-600">
+        &copy; 2021 Florian Bühler
+      </section>
     </footer>
   )
 }

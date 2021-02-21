@@ -5,7 +5,7 @@ import DarkModeToggle, { Props as DarkModeToggleProps } from 'components/atoms/D
 
 const NavBar: React.FC<DarkModeToggleProps> = (props): React.ReactElement => {
   return (
-    <div className="px-12 py-2 bg-grey-50 border-b-2 border-grey-200 flex justify-between items-center transition-colors dark:bg-grey-900">
+    <div className="px-12 py-2 bg-grey-50 border-b-2 border-grey-200 flex justify-between items-center transition-colors dark:bg-grey-900 dark:border-grey-600">
       <nav>
         <ul className="flex flex-row">
           <li>

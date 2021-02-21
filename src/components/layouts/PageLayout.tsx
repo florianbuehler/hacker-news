@@ -25,7 +25,7 @@ const PageLayout: React.FC = ({ children }): React.ReactElement => {
     <div className={classnames(isDarkMode ? 'dark' : '', 'flex flex-col min-h-screen')}>
       <Header />
       <NavBar isDarkMode={isDarkMode} toggleDarkMode={setIsDarkMode} />
-      <main className="bg-grey-50 flex-1 transition-colors dark:bg-grey-900">
+      <main className="bg-grey-50 flex-1 transition-colors dark:bg-grey-900 dark:text-grey-300">
         <div className="flex flex-col items-center max-w-5xl mx-auto">
           {React.isValidElement(children) ? React.cloneElement(children, { hideFooter, showFooter }) : children}
         </div>
