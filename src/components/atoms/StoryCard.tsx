@@ -13,7 +13,7 @@ const StoryCard: React.FC<Story> = ({ title, url, score, by, time, ...props }): 
   const timePassed = getTimePassed(time)
 
   return (
-    <article className="flex flex-row p-4 border rounded-xl shadow border-grey-300 bg-grey-50 dark:bg-grey-700 dark:text-grey-100">
+    <article className="flex flex-row p-4 border rounded-xl shadow border-grey-300 bg-grey-50 dark:bg-grey-700 dark:border-grey-500">
       <div className="flex items-center w-8 justify-center">{score}</div>
       <div className="pl-5">
         <h3 className="text-xl transition-colors duration-200 hover:text-teal-500 dark:hover:text-teal-400">

@@ -23,9 +23,9 @@ const Comment: React.FC<Props> = ({ comment }): React.ReactElement => {
     ) : null
 
   return (
-    <div className="mt-4 pl-3 ml-2 border-l-2 border-teal-500">
+    <div className="mt-4 pl-3 ml-2 border-l-2 border-teal-500 dark:border-teal-700">
       <p className="mb-1">
-        <span className="font-bold">{comment.author}</span>
+        <span className="font-bold dark:text-teal-600">{comment.author}</span>
         <span className="text-grey-500"> {timePassed} ago</span>
       </p>
       <p dangerouslySetInnerHTML={{ __html: comment.text }} />

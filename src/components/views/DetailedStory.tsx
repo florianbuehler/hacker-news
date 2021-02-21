@@ -27,7 +27,7 @@ const DetailedStory: React.FC = (): React.ReactElement => {
 
   return (
     <article className="flex flex-col items-center mt-14 mb-20 w-full">
-      <h2 className="text-3xl font-bold text-center transition-colors duration-200 hover:text-teal-500">
+      <h2 className="text-3xl font-bold text-center transition-colors duration-200 hover:text-teal-500 dark:text-teal-600 dark:hover:text-teal-400">
         <a href={story.url}>{story.title}</a>
       </h2>
       <span className="mt-4 text-lg">

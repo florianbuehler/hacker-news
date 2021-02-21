@@ -6,7 +6,7 @@ type Props = {
 
 const FooterLink: React.FC<Props> = ({ to, children }): React.ReactElement => {
   return (
-    <a href={to} className="py-2 duration-150 hover:text-teal-300">
+    <a href={to} className="py-2 duration-150 hover:text-teal-300 dark:hover:text-teal-500">
       {children}
     </a>
   )
