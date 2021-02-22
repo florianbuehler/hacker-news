@@ -38,11 +38,12 @@ const TopStories: React.FC<Props> = (props) => {
       >
         <ul className="py-8">
           {stories.map(
-            (story: Story): React.ReactElement => (
-              <li id={story.id.toString()} className="mb-4">
-                <StoryCard {...story} />
-              </li>
-            )
+            (story: Story): React.ReactElement =>
+              story && (
+                <li id={story.id.toString()} className="mb-4">
+                  <StoryCard {...story} />
+                </li>
+              )
           )}
         </ul>
       </InfiniteScroll>

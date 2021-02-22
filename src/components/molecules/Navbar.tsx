@@ -1,9 +1,9 @@
 import React from 'react'
 import routes from 'routes'
 import NavLink from 'components/atoms/NavLink'
-import DarkModeToggle, { Props as DarkModeToggleProps } from 'components/atoms/DarkModeToggle'
+import ThemeToggle from 'components/atoms/ThemeToggle'
 
-const NavBar: React.FC<DarkModeToggleProps> = (props): React.ReactElement => {
+const NavBar: React.FC = (): React.ReactElement => {
   return (
     <div className="px-12 py-2 bg-grey-50 border-b-2 border-grey-200 flex justify-between items-center transition-colors dark:bg-grey-900 dark:border-grey-600">
       <nav>
@@ -19,7 +19,7 @@ const NavBar: React.FC<DarkModeToggleProps> = (props): React.ReactElement => {
           </li>
         </ul>
       </nav>
-      <DarkModeToggle {...props} />
+      <ThemeToggle />
     </div>
   )
 }
