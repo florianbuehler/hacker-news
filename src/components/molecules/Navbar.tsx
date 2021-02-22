@@ -1,7 +1,7 @@
 import React from 'react'
 import routes from 'routes'
 import NavLink from 'components/atoms/NavLink'
-import DarkModeToggle from 'components/atoms/DarkModeToggle'
+import ThemeToggle from 'components/atoms/ThemeToggle'
 
 const NavBar: React.FC = (): React.ReactElement => {
   return (
@@ -19,7 +19,7 @@ const NavBar: React.FC = (): React.ReactElement => {
           </li>
         </ul>
       </nav>
-      <DarkModeToggle />
+      <ThemeToggle />
     </div>
   )
 }

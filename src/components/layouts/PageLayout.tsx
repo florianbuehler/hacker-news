@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import classnames from 'classnames'
+import { RootState } from 'store/reducer'
+import { AppState } from 'store/app/reducer'
 import Header from 'components/molecules/Header'
 import NavBar from 'components/molecules/Navbar'
 import Footer from 'components/molecules/Footer'
@@ -10,9 +12,7 @@ export type PageLayoutProps = {
   showFooter: () => void
 }
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-const PageLayout: React.FC = ({ theme, children }): React.ReactElement => {
+const PageLayout: React.FC<AppState> = ({ theme, children }): React.ReactElement => {
   const [displayFooter, setDisplayFooter] = useState(true)
 
   const hideFooter = () => {
@@ -37,9 +37,7 @@ const PageLayout: React.FC = ({ theme, children }): React.ReactElement => {
   )
 }
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: RootState) => {
   return {
     theme: state.app.theme
   }
