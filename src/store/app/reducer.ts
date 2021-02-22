@@ -1,7 +1,7 @@
 import { actionTypes } from './actions'
 
-const getInitialState = () => ({
-  theme: 'dark'
+export const getInitialState = () => ({
+  theme: 'light'
 })
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment

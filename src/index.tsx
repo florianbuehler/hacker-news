@@ -1,18 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
 import { Provider } from 'react-redux'
+import App from './App'
 import configureStore from './store'
 import reportWebVitals from './reportWebVitals'
 
-const renderApp = () => {
-  const initialState = {}
-  const store = configureStore(initialState)
+import './index.css'
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  store.dispatch({ type: '@hn/@@INIT' })
+const renderApp = () => {
+  const store = configureStore()
 
   ReactDOM.render(
     <React.StrictMode>
