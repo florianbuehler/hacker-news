@@ -1,14 +1,28 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import { connect, ConnectedProps } from 'react-redux'
 import classnames from 'classnames'
-import { RootState } from 'store/reducer'
-import { AppState, Theme } from 'store/app/reducer'
+import { RootState, RootDispatch } from 'store'
+import { Theme, Colors } from 'store/app/types'
 import actions from 'store/app/actions'
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-const ThemeToggle: React.FC<AppState> = ({ theme, setTheme }): React.ReactElement => {
-  const toggleTheme = (theme: Theme) => {
+const mapStateToProps = (state: RootState) => {
+  return {
+    theme: state.app.theme
+  }
+}
+
+const mapDispatchToProps = (dispatch: RootDispatch) => {
+  return {
+    setTheme: (payload: Theme) => dispatch(actions.setTheme(payload))
+  }
+}
+
+const connector = connect(mapStateToProps, mapDispatchToProps)
+
+type PropsFromRedux = ConnectedProps<typeof connector>
+
+const ThemeToggle: React.FC<PropsFromRedux> = ({ theme, setTheme }): React.ReactElement => {
+  const toggleTheme = (theme: Colors) => {
     if (theme === 'light') {
       setTheme({ theme: 'dark' })
     } else {
@@ -28,20 +42,4 @@ const ThemeToggle: React.FC<AppState> = ({ theme, setTheme }): React.ReactElemen
   )
 }
 
-const mapStateToProps = (state: RootState) => {
-  return {
-    theme: state.app.theme
-  }
-}
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-const mapDispatchToProps = (dispatch) => {
-  return {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    setTheme: (payload) => dispatch(actions.setTheme(payload))
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(ThemeToggle)
+export default connector(ThemeToggle)
