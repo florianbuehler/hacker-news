@@ -1,23 +1,16 @@
-import { actionTypes } from './actions'
-
-export type Theme = 'light' | 'dark'
-
-export type AppState = {
-  theme: Theme
-}
+import { SET_THEME } from './actions'
+import { AppState, AppActionTypes } from './types'
 
 export const getInitialAppState = (): AppState => ({
   theme: 'light'
 })
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-const app = (state = getInitialAppState(), { type, payload }): State => {
-  switch (type) {
-    case actionTypes.SET_THEME:
+const app = (state = getInitialAppState(), action: AppActionTypes): AppState => {
+  switch (action.type) {
+    case SET_THEME:
       return {
         ...state,
-        ...payload // { theme: <VALUE> }
+        ...action.payload // { theme: <VALUE> }
       }
     default:
       return state

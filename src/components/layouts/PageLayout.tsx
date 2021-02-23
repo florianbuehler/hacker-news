@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import { connect } from 'react-redux'
+import { connect, ConnectedProps } from 'react-redux'
 import classnames from 'classnames'
-import { RootState } from 'store/reducer'
-import { AppState } from 'store/app/reducer'
+import { RootState } from 'store'
 import Header from 'components/molecules/Header'
 import NavBar from 'components/molecules/Navbar'
 import Footer from 'components/molecules/Footer'
@@ -12,7 +11,17 @@ export type PageLayoutProps = {
   showFooter: () => void
 }
 
-const PageLayout: React.FC<AppState> = ({ theme, children }): React.ReactElement => {
+const mapStateToProps = (state: RootState) => {
+  return {
+    theme: state.app.theme
+  }
+}
+
+const connector = connect(mapStateToProps)
+
+type PropsFromRedux = ConnectedProps<typeof connector>
+
+const PageLayout: React.FC<PropsFromRedux> = ({ theme, children }): React.ReactElement => {
   const [displayFooter, setDisplayFooter] = useState(true)
 
   const hideFooter = () => {
@@ -37,10 +46,4 @@ const PageLayout: React.FC<AppState> = ({ theme, children }): React.ReactElement
   )
 }
 
-const mapStateToProps = (state: RootState) => {
-  return {
-    theme: state.app.theme
-  }
-}
-
-export default connect(mapStateToProps)(PageLayout)
+export default connector(PageLayout)
