@@ -2,7 +2,7 @@ import React from 'react'
 import { connect, ConnectedProps } from 'react-redux'
 import classnames from 'classnames'
 import { RootState, RootDispatch } from 'store'
-import { Theme, Colors } from 'store/app/types'
+import { Theme } from 'store/app/types'
 import actions from 'store/app/actions'
 
 const mapStateToProps = (state: RootState) => {
@@ -13,7 +13,7 @@ const mapStateToProps = (state: RootState) => {
 
 const mapDispatchToProps = (dispatch: RootDispatch) => {
   return {
-    setTheme: (payload: Theme) => dispatch(actions.setTheme(payload))
+    setTheme: (theme: Theme) => dispatch(actions.setTheme(theme))
   }
 }
 
@@ -22,11 +22,11 @@ const connector = connect(mapStateToProps, mapDispatchToProps)
 type PropsFromRedux = ConnectedProps<typeof connector>
 
 const ThemeToggle: React.FC<PropsFromRedux> = ({ theme, setTheme }): React.ReactElement => {
-  const toggleTheme = (theme: Colors) => {
+  const toggleTheme = (theme: Theme) => {
     if (theme === 'light') {
-      setTheme({ theme: 'dark' })
+      setTheme('dark')
     } else {
-      setTheme({ theme: 'light' })
+      setTheme('light')
     }
   }
 

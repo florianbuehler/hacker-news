@@ -1,8 +1,9 @@
-import { SET_THEME } from './actions'
-import { AppState, AppActionTypes } from './types'
+import { SET_HIDE_FOOTER, SET_THEME } from './actions'
+import { AppActionTypes, AppState } from './types'
 
 export const getInitialAppState = (): AppState => ({
-  theme: 'light'
+  theme: 'light',
+  hideFooter: false
 })
 
 const app = (state = getInitialAppState(), action: AppActionTypes): AppState => {
@@ -10,7 +11,12 @@ const app = (state = getInitialAppState(), action: AppActionTypes): AppState => 
     case SET_THEME:
       return {
         ...state,
-        ...action.payload // { theme: <VALUE> }
+        theme: action.theme
+      }
+    case SET_HIDE_FOOTER:
+      return {
+        ...state,
+        hideFooter: action.hideFooter
       }
     default:
       return state

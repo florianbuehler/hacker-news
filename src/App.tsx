@@ -30,19 +30,19 @@ const CustomSwitch: React.FC<PageLayoutProps> = ({ hideFooter, showFooter }) => 
       <CustomRoute exact path={routes.home}>
         <Redirect to={routes.stories.best} />
       </CustomRoute>
-      <CustomRoute exact path={routes.stories.best} adaptLayout={hideFooter}>
+      <CustomRoute exact path={routes.stories.best} hideFooter>
         <TopStories />
       </CustomRoute>
-      <CustomRoute exact path={routes.stories.top} adaptLayout={hideFooter}>
+      <CustomRoute exact path={routes.stories.top} hideFooter>
         <TopStories />
       </CustomRoute>
-      <CustomRoute exact path={routes.stories.new} adaptLayout={showFooter}>
+      <CustomRoute exact path={routes.stories.new} hideFooter>
         <TopStories />
       </CustomRoute>
-      <CustomRoute exact path={routes.stories.details.show} adaptLayout={showFooter}>
+      <CustomRoute exact path={routes.stories.details.show}>
         <DetailedStory />
       </CustomRoute>
-      <CustomRoute path="*" adaptLayout={showFooter}>
+      <CustomRoute path="*" hideFooter>
         <h1>No match</h1>
       </CustomRoute>
     </Switch>

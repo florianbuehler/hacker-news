@@ -1,16 +1,20 @@
-import { SET_THEME } from './actions'
+import { SET_THEME, SET_HIDE_FOOTER } from './actions'
 
-export type Colors = 'light' | 'dark'
+export type Theme = 'light' | 'dark'
 
-export type Theme = {
-  theme: Colors
+export type AppState = {
+  theme: Theme
+  hideFooter: boolean
 }
-
-export type AppState = Theme
 
 type SetThemeAction = {
   type: typeof SET_THEME
-  payload: Theme
+  theme: Theme
 }
 
-export type AppActionTypes = SetThemeAction
+type SetHideFooterAction = {
+  type: typeof SET_HIDE_FOOTER
+  hideFooter: boolean
+}
+
+export type AppActionTypes = SetThemeAction | SetHideFooterAction
