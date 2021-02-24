@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { connect, ConnectedProps } from 'react-redux'
 import classnames from 'classnames'
 import { RootState } from 'store'
@@ -13,7 +13,8 @@ export type PageLayoutProps = {
 
 const mapStateToProps = (state: RootState) => {
   return {
-    theme: state.app.theme
+    theme: state.app.theme,
+    hideFooter: state.app.hideFooter
   }
 }
 
@@ -21,27 +22,15 @@ const connector = connect(mapStateToProps)
 
 type PropsFromRedux = ConnectedProps<typeof connector>
 
-const PageLayout: React.FC<PropsFromRedux> = ({ theme, children }): React.ReactElement => {
-  const [displayFooter, setDisplayFooter] = useState(true)
-
-  const hideFooter = () => {
-    setDisplayFooter(false)
-  }
-
-  const showFooter = () => {
-    setDisplayFooter(true)
-  }
-
+const PageLayout: React.FC<PropsFromRedux> = ({ theme, hideFooter, children }): React.ReactElement => {
   return (
     <div className={classnames(theme, 'flex flex-col min-h-screen')}>
       <Header />
       <NavBar />
       <main className="bg-grey-50 flex-1 transition-colors dark:bg-grey-900 dark:text-grey-300">
-        <div className="flex flex-col items-center max-w-5xl mx-auto">
-          {React.isValidElement(children) ? React.cloneElement(children, { hideFooter, showFooter }) : children}
-        </div>
+        <div className="flex flex-col items-center max-w-5xl mx-auto">{children}</div>
       </main>
-      {displayFooter && <Footer />}
+      {!hideFooter && <Footer />}
     </div>
   )
 }
