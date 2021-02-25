@@ -6,11 +6,6 @@ import Header from 'components/molecules/Header'
 import NavBar from 'components/molecules/Navbar'
 import Footer from 'components/molecules/Footer'
 
-export type PageLayoutProps = {
-  hideFooter: () => void
-  showFooter: () => void
-}
-
 const mapStateToProps = (state: RootState) => {
   return {
     theme: state.app.theme,

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component'
-import { Story } from 'store/story/story'
+import { Story } from 'store/story/types'
 import StoryCard from 'components/atoms/StoryCard'
 import LoadingDots from 'components/atoms/LoadingDots'
 
