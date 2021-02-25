@@ -17,8 +17,6 @@ const DetailedStory: React.FC = (): React.ReactElement => {
     hackerNewsApi.getStoryDetailsById(storyId).then((res) => setStory(res))
   }, [])
 
-  console.log('The state is:', story)
-
   if (!story) {
     return <LoadingDots className="mx-auto mt-12 mb-16" />
   }
