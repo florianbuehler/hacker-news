@@ -1,4 +1,5 @@
 import hackerNewsApi from 'services/hackerNewsApi'
+import { StoryActionTypes } from './types'
 
 type FetchStoriesPayload = {
   storyIds: number[]
@@ -11,6 +12,7 @@ export const FETCH_STORY_IDS_FAILURE = 'FETCH_STORY_IDS_FAILURE'
 export const FETCH_STORIES_REQUEST = 'FETCH_STORIES_REQUEST'
 export const FETCH_STORIES_SUCCESS = 'FETCH_STORIES_SUCCESS'
 export const FETCH_STORIES_FAILURE = 'FETCH_STORIES_FAILURE'
+export const RESET_STORIES = 'RESET_STORIES'
 
 const actions = {
   fetchStoryIds: () => {
@@ -42,7 +44,8 @@ const actions = {
         .then((stories) => dispatch({ type: FETCH_STORIES_SUCCESS, stories }))
         .catch(() => dispatch({ type: FETCH_STORIES_FAILURE }))
     }
-  }
+  },
+  resetStories: (): StoryActionTypes => ({ type: RESET_STORIES })
 }
 
 export default actions
