@@ -34,6 +34,8 @@ const story = (state = getInitialStoryState(), action: StoryActionTypes): StoryS
         page: state.page + 1,
         isFetching: false
       }
+    case 'RESET_STORIES':
+      return getInitialStoryState()
     default:
       return state
   }

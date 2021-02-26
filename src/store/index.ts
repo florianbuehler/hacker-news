@@ -4,7 +4,7 @@ import rootReducer from './reducer'
 import middleware from './middleware'
 import { AppState, AppActionTypes } from './app/types'
 import { getInitialAppState } from './app/reducer'
-import { StoryState } from './story/types'
+import { StoryActionTypes, StoryState } from './story/types'
 import { getInitialStoryState } from './story/reducer'
 
 export type RootState = {
@@ -12,7 +12,7 @@ export type RootState = {
   story: StoryState
 }
 
-type RootActionTypes = AppActionTypes
+type RootActionTypes = AppActionTypes | StoryActionTypes
 
 export type RootDispatch = Dispatch<RootActionTypes>
 

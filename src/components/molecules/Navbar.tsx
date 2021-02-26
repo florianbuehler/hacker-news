@@ -9,13 +9,13 @@ const NavBar: React.FC = (): React.ReactElement => {
       <nav>
         <ul className="flex flex-row">
           <li>
-            <NavLink to={routes.stories.best}>Best</NavLink>
-          </li>
-          <li>
             <NavLink to={routes.stories.top}>Top</NavLink>
           </li>
           <li>
             <NavLink to={routes.stories.new}>New</NavLink>
+          </li>
+          <li>
+            <NavLink to={routes.stories.best}>Best</NavLink>
           </li>
         </ul>
       </nav>

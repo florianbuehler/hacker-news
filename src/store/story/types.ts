@@ -4,7 +4,8 @@ import {
   FETCH_STORY_IDS_FAILURE,
   FETCH_STORIES_REQUEST,
   FETCH_STORIES_SUCCESS,
-  FETCH_STORIES_FAILURE
+  FETCH_STORIES_FAILURE,
+  RESET_STORIES
 } from './actions'
 
 export type Story = {
@@ -53,6 +54,10 @@ type FetchStoriesFailureAction = {
   type: typeof FETCH_STORIES_FAILURE
 }
 
+type ResetStoriesAction = {
+  type: typeof RESET_STORIES
+}
+
 export type StoryActionTypes =
   | FetchStoryIdsRequestAction
   | FetchStoryIdsSuccessAction
@@ -60,3 +65,4 @@ export type StoryActionTypes =
   | FetchStoriesRequestAction
   | FetchStoriesSuccessAction
   | FetchStoriesFailureAction
+  | ResetStoriesAction

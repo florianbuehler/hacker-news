@@ -6,17 +6,19 @@ import LoadingDots from 'components/atoms/LoadingDots'
 
 type Props = {
   storyIds: number[]
-  stories: any
+  stories: Story[]
   page: number
   hasMoreStories: boolean
-  fetchStoriesFirstPage: () => void
-  fetchStories: (storyIds: number[], page: number) => any
+  fetchStoryIds: () => void
+  resetStories: () => void
+  fetchStories: (storyIds: number[], page: number) => void
   isFetching: boolean
 }
 
-const TopStories: React.FC<Props> = (props) => {
+const StoriesOverview: React.FC<Props> = (props) => {
   useEffect(() => {
-    props.fetchStoriesFirstPage()
+    props.resetStories()
+    props.fetchStoryIds()
   }, [])
 
   const fetchStories = (): void => {
@@ -40,7 +42,7 @@ const TopStories: React.FC<Props> = (props) => {
           {stories.map(
             (story: Story): React.ReactElement =>
               story && (
-                <li id={story.id.toString()} className="mb-4">
+                <li key={story.id.toString()} className="mb-4">
                   <StoryCard {...story} />
                 </li>
               )
@@ -51,4 +53,4 @@ const TopStories: React.FC<Props> = (props) => {
   )
 }
 
-export default TopStories
+export default StoriesOverview
