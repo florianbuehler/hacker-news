@@ -5,8 +5,8 @@ import PageLayout from 'components/layouts/PageLayout'
 import CustomRoute from 'components/atoms/CustomRoute'
 
 // Views
-import BestStories from 'components/views/BestStories'
 import TopStories from 'components/views/TopStories'
+import BestStories from 'components/views/BestStories'
 import NewStories from 'components/views/NewStories'
 import DetailedStory from 'components/views/DetailedStory'
 
@@ -18,13 +18,13 @@ const App: React.FC = () => {
         {/* renders the first one that matches the current URL. */}
         <Switch>
           <CustomRoute exact path={routes.home}>
-            <Redirect to={routes.stories.best} />
-          </CustomRoute>
-          <CustomRoute exact path={routes.stories.best} hideFooter>
-            <BestStories />
+            <Redirect to={routes.stories.top} />
           </CustomRoute>
           <CustomRoute exact path={routes.stories.top} hideFooter>
             <TopStories />
+          </CustomRoute>
+          <CustomRoute exact path={routes.stories.best} hideFooter>
+            <BestStories />
           </CustomRoute>
           <CustomRoute exact path={routes.stories.new} hideFooter>
             <NewStories />

@@ -26,14 +26,16 @@ const DetailedStory: React.FC = (): React.ReactElement => {
   return (
     <article className="flex flex-col items-center mt-14 mb-20 w-full">
       <h2 className="text-3xl font-bold text-center transition-colors duration-200 hover:text-teal-500 dark:text-teal-600 dark:hover:text-teal-400">
-        <a href={story.url}>{story.title}</a>
+        <a href={story.url} target="_blank" rel="noopener noreferrer">
+          {story.title}
+        </a>
       </h2>
       <span className="mt-4 text-lg">
         posted by {story.author} on <time dateTime={story.created_at}>{date}</time>
       </span>
       <section className="flex flex-col items-start w-full mt-12">
         <h3 className="text-xl">Comments:</h3>
-        <ul>
+        <ul className="w-full">
           {story.children.map((comment) => {
             return (
               <li key={comment.id} className="mb-4">
