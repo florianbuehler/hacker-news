@@ -9,16 +9,16 @@ type Props = {
   stories: any
   page: number
   hasMoreStories: boolean
-  fetchStoriesFirstPage: () => void
+  fetchStoryIds: () => void
   resetStories: () => void
   fetchStories: (storyIds: number[], page: number) => any
   isFetching: boolean
 }
 
-const TopStories: React.FC<Props> = (props) => {
+const StoriesOverview: React.FC<Props> = (props) => {
   useEffect(() => {
     props.resetStories()
-    props.fetchStoriesFirstPage()
+    props.fetchStoryIds()
   }, [])
 
   const fetchStories = (): void => {
@@ -53,4 +53,4 @@ const TopStories: React.FC<Props> = (props) => {
   )
 }
 
-export default TopStories
+export default StoriesOverview

@@ -5,7 +5,9 @@ import PageLayout from 'components/layouts/PageLayout'
 import CustomRoute from 'components/atoms/CustomRoute'
 
 // Views
+import BestStories from 'components/views/BestStories'
 import TopStories from 'components/views/TopStories'
+import NewStories from 'components/views/NewStories'
 import DetailedStory from 'components/views/DetailedStory'
 
 const App: React.FC = () => {
@@ -19,13 +21,13 @@ const App: React.FC = () => {
             <Redirect to={routes.stories.best} />
           </CustomRoute>
           <CustomRoute exact path={routes.stories.best} hideFooter>
-            <TopStories />
+            <BestStories />
           </CustomRoute>
           <CustomRoute exact path={routes.stories.top} hideFooter>
             <TopStories />
           </CustomRoute>
           <CustomRoute exact path={routes.stories.new} hideFooter>
-            <TopStories />
+            <NewStories />
           </CustomRoute>
           <CustomRoute exact path={routes.stories.details.show}>
             <DetailedStory />
