@@ -35,14 +35,12 @@ npm run start
 To run the project locally in development mode you can execute `npm run start` in the project directory.
 The result can then be observed in the browser at [http://localhost:3000](http://localhost:3000).
 
-The page will reload if you make edits. You will also see any lint errors in the console.
+Thanks to CRA the page is configured to offer hot reloading. Thus any edits you make in the code will directly be visible in the browser. You will also see any lint errors in the console.
 
 ```shell script
 npm run test
 ```
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode. For a detailed explanation see the [Create React App - Running Tests](https://facebook.github.io/create-react-app/docs/running-tests) section.
 
 ```shell script
 npm run eject
@@ -66,16 +64,4 @@ to build a production ready version of the app in the `build` folder. It correct
 
 The build is minified and the filenames include the hashes. Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-
-
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-## eslint
-https://www.robertcooper.me/using-eslint-and-prettier-in-a-typescript-project 
+For more information about how the bundled app can be deployed, check out the [Create React App - Deployment](https://facebook.github.io/create-react-app/docs/deployment) documentation.
