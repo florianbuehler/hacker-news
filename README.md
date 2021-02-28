@@ -5,7 +5,7 @@ This is a Hacker News Clone based on the [API](https://github.com/HackerNews/API
 
 ## General
 
-The project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
+The project is a [React](https://reactjs.org/) Single Page Application (SPA), which was bootstrapped using [Create React App](https://github.com/facebook/create-react-app). 
 
 It uses [TypeScript](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html), [Redux](https://redux.js.org/) for state management and [tailwindcss](https://tailwindcss.com/) for styling. 
 
@@ -41,6 +41,17 @@ Thanks to CRA the page is configured to offer hot reloading. Thus any edits you 
 npm run test
 ```
 Launches the test runner in the interactive watch mode. For a detailed explanation see the [Create React App - Running Tests](https://facebook.github.io/create-react-app/docs/running-tests) section.
+
+```shell script
+npm run eslint
+```
+To see all formatting and code snippets which do not fit the code quality standards specified in the Eslint & Prettier configurations you can use `npm run eslint`. The command outputs a list of all violations in the terminal.
+
+```shell script
+npm run fix-eslint
+```
+If you don't want to fix the code quality issues found by Eslint & Prettier by hand you can simply run `fix-eslint`. 
+It will try to fix all violations and output the violations which couldn't be fixed automatically.
 
 ```shell script
 npm run eject
