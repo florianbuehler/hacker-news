@@ -8,7 +8,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "eslint": "eslint . --ext .js",
+    "eslint": "eslint . --ext ts,tsx",
     "fix-eslint": "eslint src --ext ts,tsx --fix",
     "eject": "react-scripts eject"
   },
