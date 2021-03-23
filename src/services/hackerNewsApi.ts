@@ -2,7 +2,7 @@ import ApiService from './api'
 
 const FIREBASE_BASE_URL = 'https://hacker-news.firebaseio.com/v0'
 const JSON_QUERY = '.json?print=pretty'
-const ALGOLIA_BASE_URL = 'http://hn.algolia.com/api/v1'
+const ALGOLIA_BASE_URL = 'https://hn.algolia.com/api/v1'
 
 const PAGE_LIMIT = 20
 
