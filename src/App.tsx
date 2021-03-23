@@ -20,6 +20,9 @@ const App: React.FC = () => {
           <CustomRoute exact path={routes.home}>
             <Redirect to={routes.stories.top} />
           </CustomRoute>
+          <CustomRoute exact path="/hacker-news">
+            <Redirect to={routes.home} />
+          </CustomRoute>
           <CustomRoute exact path={routes.stories.top} hideFooter>
             <TopStories />
           </CustomRoute>
