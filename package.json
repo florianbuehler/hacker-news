@@ -11,7 +11,7 @@
     "build": "craco build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "eslint": "eslint . --ext .js",
+    "eslint": "eslint . --ext ts,tsx",
     "fix-eslint": "eslint src --ext ts,tsx --fix",
     "eject": "react-scripts eject"
   },
