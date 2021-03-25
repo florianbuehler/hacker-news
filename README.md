@@ -1,7 +1,8 @@
 # Hacker News Clone
 
-This is a Hacker News Clone based on the open [API](https://github.com/HackerNews/API) provided by Hacker News / Y Combinator.
-The "official" Hacker News page provided by Y Combinator can be found [here](https://news.ycombinator.com/).
+This is a Hacker News Clone based on the open [API](https://github.com/HackerNews/API) provided by Hacker News / Y Combinator. It can be found at [https://florianbuehler.github.io/hacker-news/](https://florianbuehler.github.io/hacker-news/).
+
+(The "official" Hacker News page provided by Y Combinator can be found [here](https://news.ycombinator.com/).)
 
 
 ## General
