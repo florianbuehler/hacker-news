@@ -1,17 +1,17 @@
 # Hacker News Clone
 
-This is a Hacker News Clone based on the open [API](https://github.com/HackerNews/API) provided by Hacker News / Y Combinator. It can be found at [https://florianbuehler.github.io/hacker-news/](https://florianbuehler.github.io/hacker-news/).
+This is a Hacker News Clone based on the open [API](https://github.com/HackerNews/API) provided by Hacker News / Y Combinator. A deployed version can be found at [https://florianbuehler.github.io/hacker-news/](https://florianbuehler.github.io/hacker-news/).
 
 (The "official" Hacker News page provided by Y Combinator can be found [here](https://news.ycombinator.com/).)
 
 
-## General
+## Technology
 
 The project is a [React](https://reactjs.org/) Single Page Application (SPA), which was bootstrapped using [Create React App](https://github.com/facebook/create-react-app). 
 
 It uses [TypeScript](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html), [Redux](https://redux.js.org/) for state management and [tailwindcss](https://tailwindcss.com/) (and some [Sass](https://sass-lang.com/)) for styling. 
 
-Additionally it uses [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/) to ensure a high quality and consistent code style.
+Additionally [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/) are setup to ensure a high quality and consistent code style.
 
 
 ## Getting started
